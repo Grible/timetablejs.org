@@ -1,0 +1,33 @@
+// Import gridle :
+@import 'gridle/sass/gridle/gridle';
+
+// basic configuration :
+@include gridle_setup( (
+	context : 12,
+	gutter-width : 30px,
+	html-states-classes : false
+) );
+
+// register states :
+@include gridle_register_default_mobile_first_states();
+
+// Generate classes :
+// @include gridle_generate_classes();
+
+// Max size :
+.content-wrap {
+	margin: 0 auto;
+
+	@include gridle_grid_background();
+
+	@include gridle_state(md) {
+		max-width: 768px;
+	}
+	@include gridle_state(lg) {
+		max-width: 1024px;
+	}
+}
+.hero-wrap {
+	margin: 0 auto;
+	max-width: 1200px;
+}
