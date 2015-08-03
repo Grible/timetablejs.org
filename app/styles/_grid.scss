@@ -18,7 +18,7 @@
 .content-wrap {
 	margin: 0 auto;
 
-	@include gridle_grid_background();
+	// @include gridle_grid_background();
 
 	@include gridle_state(md) {
 		max-width: 768px;

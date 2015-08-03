@@ -4,10 +4,46 @@
 @import grid
 @import bourbon/app/assets/stylesheets/bourbon
 
+$grey: #F7F7F7
+$primary: #6A1AC8
+$primary-dark: #3024AE
+$primary-light: #C36CD5
+$secondary-light: #B7CE42
+$secondary-dark: #91B515
+$text-color: #62627A
+
 body
   background: #fafafa
-  font-family: $monospace
-  color: #333
+  font-family: 'Open Sans', 'Helvetica', sans-serif
+  font-weight: 300
+  color: $text-color
+  line-height: 2
+  -webkit-font-smoothing: antialiased
+
+h1, h2
+  font-family: 'Lato', 'Helvetica', sans-serif
+  color: $primary-dark
+  font-weight: 300
+  margin-bottom: 0.2em
+  margin-left: -3px
+
+h2
+  font-size: 2.625em
+
+.grey-bg-color
+  background-color: $grey
+.primary-bg-color
+  background-color: $primary
+.flip-text-color
+  h1, h2
+    color: white
+  p
+    color: #B990E6
+
+
+.vpad
+  padding-top: 4.5em
+  padding-bottom: 4.5em
 
 .browserupgrade
   margin: 0.2em 0
