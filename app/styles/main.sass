@@ -13,7 +13,6 @@ $secondary-dark: #91B515
 $text-color: #62627A
 
 body
-  background: #fafafa
   font-family: 'Open Sans', 'Helvetica', sans-serif
   font-weight: 300
   color: $text-color
@@ -30,6 +29,17 @@ h1, h2
 h2
   font-size: 2.625em
 
+pre
+  padding: 1.2em 1.4em
+  margin: 1em 0
+  background-color: $grey
+  color: black
+  font-size: 0.95em
+  line-height: 1.5
+  overflow-x: scroll
+  white-space: nowrap
+  border-radius: 3px
+
 .grey-bg-color
   background-color: $grey
 .primary-bg-color
@@ -40,6 +50,11 @@ h2
   p
     color: #B990E6
 
+
+.content-wrap, .hero-wrap
+  +clearfix
+  section
+    +gridle(12)
 
 .vpad
   padding-top: 4.5em
