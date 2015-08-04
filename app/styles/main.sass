@@ -23,22 +23,32 @@ h1, h2
   font-family: 'Lato', 'Helvetica', sans-serif
   color: $primary-dark
   font-weight: 300
-  margin-bottom: 0.2em
   margin-left: -3px
+  margin-bottom: 0.7em
+  line-height: 1
 
 h2
   font-size: 2.625em
 
+code, pre
+  font-size: 0.95em
+  white-space: nowrap
+
 pre
+  color: black
   padding: 1.2em 1.4em
   margin: 1em 0
-  background-color: $grey
-  color: black
-  font-size: 0.95em
   line-height: 1.5
+  background-color: $grey
   overflow-x: scroll
-  white-space: nowrap
   border-radius: 3px
+
+p + p
+  margin-top: 1.5em
+
+hr
+  margin: 4em 0
+  border-color: $grey
 
 .grey-bg-color
   background-color: $grey

@@ -37,8 +37,37 @@
         <section>
           <h2>Easy to use</h2>
           <p>
-            Make a timetable object, optionally set the scope in hours (the visible hours in the timetable)
+            Make a timetable object, and optionally set the scope (the visible hours in the timetable):
             <pre><span style='color:#800000; font-weight:bold; '>var</span> timetable <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> Timetable<span style='color:#808030; '>(</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br>timetable<span style='color:#808030; '>.</span>setScope<span style='color:#808030; '>(</span><span style='color:#008c00; '>9</span><span style='color:#808030; '>,</span> <span style='color:#008c00; '>17</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> <span style='color:#696969; '>// optional, only whole hours between 0 and 23</span></pre>
+          </p>
+          <p>
+            Add some locations:
+            <pre>timetable<span style='color:#808030; '>.</span>addLocations<span style='color:#808030; '>(</span><span style='color:#808030; '>[</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>Silent Disco</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Nile</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Len Room</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Maas Room</span><span style='color:#800000; '>'</span><span style='color:#808030; '>]</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span>
+</pre>
+          </p>
+          <p>
+            Add your events using <code>addEvent(name, location, startDate, endDate, url)</code>:
+            <pre>timetable<span style='color:#808030; '>.</span>addEvent<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>Frankadelic</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; '>'</span><span style='color:#0000e6; '>Nile</span><span style='color:#800000; '>'</span><span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>Date</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>2015</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>7</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>17</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>10</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>45</span><span style='color:#808030; '>)</span><span style='color:#808030; '>,</span> <span style='color:#800000; font-weight:bold; '>new</span> <span style='color:#797997; '>Date</span><span style='color:#808030; '>(</span><span style='color:#008c00; '>2015</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>7</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>17</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>12</span><span style='color:#808030; '>,</span><span style='color:#008c00; '>30</span><span style='color:#808030; '>)</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span></pre>
+          </p>
+          <p>
+            Last, render the thing in your previously created timetable placeholder:
+            <pre><span style='color:#800000; font-weight:bold; '>var</span> renderer <span style='color:#808030; '>=</span> <span style='color:#800000; font-weight:bold; '>new</span> Timetable<span style='color:#808030; '>.</span>Renderer<span style='color:#808030; '>(</span>timetable<span style='color:#808030; '>)</span><span style='color:#800080; '>;</span><br>renderer<span style='color:#808030; '>.</span>draw<span style='color:#808030; '>(</span><span style='color:#800000; '>'</span><span style='color:#0000e6; '>.timetable</span><span style='color:#800000; '>'</span><span style='color:#808030; '>)</span><span style='color:#800080; '>;</span> <span style='color:#696969; '>// any css selector</span></pre>
+          </p>
+
+          <hr>
+
+          <h2>Getting Started</h2>
+          <p>
+            Install with bower, or alternatively download the ZIP:
+            <pre><span style='color:#797997; '>$</span> bower install timetable</pre>
+          </p>
+          <p>
+            Load the plugin and styles in your HTML from the <code>dist</code> folder:
+            <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>link</span><span style='color:#274796; '> </span><span style='color:#074726; '>rel</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"stylesheet"</span><span style='color:#274796; '> </span><span style='color:#074726; '>href</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"timetablejs.css"</span><span style='color:#a65700; '>></span><br><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#274796; '> </span><span style='color:#074726; '>src</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"timetable.min.js"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>script</span><span style='color:#a65700; '>></span></pre>
+          </p>
+          <p>
+            Add a timetable placeholder:
+            <pre><span style='color:#a65700; '>&lt;</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#274796; '> </span><span style='color:#074726; '>class</span><span style='color:#808030; '>=</span><span style='color:#0000e6; '>"timetable"</span><span style='color:#a65700; '>></span><span style='color:#a65700; '>&lt;/</span><span style='color:#800000; font-weight:bold; '>div</span><span style='color:#a65700; '>></span></pre>
           </p>
         </section>
       </div>
@@ -49,6 +78,14 @@
         <section>
           <h2>Changing the looks</h2>
           <p>Instead of adding the included css directly to your HTML, you could import the sass file. All colors and spacing values are defined as default variables which you can easily override.</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="vpad">
+      <div class="content-wrap">
+        <section>
+          <p>Timetable.js has been designed to work with modern browsers (only). It has been tested with the latest version of the most common browsers.</p>
         </section>
       </div>
     </div>
