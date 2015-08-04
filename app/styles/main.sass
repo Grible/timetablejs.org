@@ -12,6 +12,25 @@ $secondary-light: #B7CE42
 $secondary-dark: #91B515
 $text-color: #62627A
 
+
+/* ==========================================================
+ * mixins
+ * ==========================================================
+ */
+
+@mixin valign-middle
+  position: relative
+  top: 50%
+  +transform(translateY(-50%))
+
+@mixin valign-parent
+  +transform-style(preserve-3d)
+
+/* ==========================================================
+ * default element styles
+ * ==========================================================
+ */
+
 body
   font-family: 'Open Sans', 'Helvetica', sans-serif
   font-weight: 300
@@ -23,7 +42,7 @@ a
   text-decoration: none
   color: $primary
 
-h1, h2
+h1, h2, h3
   font-family: 'Lato', 'Helvetica', sans-serif
   color: $primary-dark
   font-weight: 300
@@ -31,8 +50,15 @@ h1, h2
   margin-bottom: 0.7em
   line-height: 1
 
+h1
+  font-size: 2.875em
+  line-height: 1.25
+
 h2
   font-size: 2.625em
+
+h3
+  font-weight: 600
 
 code, pre
   font-size: 0.95em
@@ -57,18 +83,55 @@ hr
   margin: 4em 0
   border-color: $grey
 
-.centered
+/* ==========================================================
+ * repeated styles
+ * ==========================================================
+ */
 
 .grey-bg-color
   background-color: $grey
 .primary-bg-color
   background-color: $primary
+
 .flip-text-color
-  h1, h2
+  h1, h2, h3
     color: white
-  p
+  &, p
     color: #B990E6
 
+.vpad
+  padding-top: 4.5em
+  padding-bottom: 4.5em
+.sm-vpad
+  padding-top: 2.5em
+  padding-bottom: 2.5em
+
+
+/* ==========================================================
+ * custom element styles
+ * ==========================================================
+ */
+
+.browserupgrade
+  margin: 0.2em 0
+  background: #ccc
+  color: #000
+  padding: 0.2em 0
+
+header
+  @extend .flip-text-color
+  background-color: $primary-light
+
+  .hero-wrap
+    @extend .sm-vpad
+    +valign-parent
+    position: relative
+    height: 100vh
+  .title-bar
+    +gridle(12)
+  .cta-column, .demo-column
+    +gridle(6)
+    +valign-middle
 
 .content-wrap, .hero-wrap
   +clearfix
@@ -76,16 +139,5 @@ hr
     +gridle(12)
 
 footer section
-  padding: 2.5em 0
+  @extend .sm-vpad
   border-top: 1px solid $grey
-
-
-.vpad
-  padding-top: 4.5em
-  padding-bottom: 4.5em
-
-.browserupgrade
-  margin: 0.2em 0
-  background: #ccc
-  color: #000
-  padding: 0.2em 0

@@ -29,5 +29,13 @@
 }
 .hero-wrap {
 	margin: 0 auto;
-	max-width: 1200px;
+
+	// @include gridle_grid_background();
+
+	@include gridle_state(md) {
+		max-width: 960px;
+	}
+	@include gridle_state(lg) {
+		max-width: 1200px;
+	}
 }
