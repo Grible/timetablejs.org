@@ -19,6 +19,10 @@ body
   line-height: 2
   -webkit-font-smoothing: antialiased
 
+a
+  text-decoration: none
+  color: $primary
+
 h1, h2
   font-family: 'Lato', 'Helvetica', sans-serif
   color: $primary-dark
@@ -46,9 +50,14 @@ pre
 p + p
   margin-top: 1.5em
 
+p.centered
+  text-align: center
+
 hr
   margin: 4em 0
   border-color: $grey
+
+.centered
 
 .grey-bg-color
   background-color: $grey
@@ -65,6 +74,11 @@ hr
   +clearfix
   section
     +gridle(12)
+
+footer section
+  padding: 2.5em 0
+  border-top: 1px solid $grey
+
 
 .vpad
   padding-top: 4.5em
