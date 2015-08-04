@@ -53,6 +53,8 @@ h1, h2, h3
 h1
   font-size: 2.875em
   line-height: 1.25
+  margin-top: 0.7em
+  margin-bottom: 1em
 
 h2
   font-size: 2.625em
@@ -99,6 +101,21 @@ hr
   &, p
     color: #B990E6
 
+.btn
+  @extend h3
+  background-color: transparentize($primary-dark, 0.2)
+  display: inline-block
+  padding: 1.15em 2.7em
+  text-transform: uppercase
+  font-size: 0.78em
+  letter-spacing: 0.08em
+  border-radius: 4px
+  transition: background-color 300ms ease
+
+  &:hover
+    background-color: $primary-dark
+
+
 .vpad
   padding-top: 4.5em
   padding-bottom: 4.5em
@@ -120,18 +137,29 @@ hr
 
 header
   @extend .flip-text-color
-  background-color: $primary-light
+  background-image: linear-gradient(135deg, $primary-light, $primary-dark)
 
   .hero-wrap
     @extend .sm-vpad
-    +valign-parent
     position: relative
-    height: 100vh
+
+    +gridle_state(sm)
+      +valign-parent
+      height: 100vh
   .title-bar
     +gridle(12)
+    text-align: center
+
+    +gridle_state(sm)
+      text-align: left
   .cta-column, .demo-column
-    +gridle(6)
-    +valign-middle
+    +gridle(12)
+    +gridle(6, sm)
+    text-align: center
+
+    +gridle_state(sm)
+      +valign-middle
+      text-align: left
 
 .content-wrap, .hero-wrap
   +clearfix
