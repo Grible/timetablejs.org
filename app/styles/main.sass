@@ -1,16 +1,38 @@
 // bower:scss
 // endbower
 
-@import grid
-@import bourbon/app/assets/stylesheets/bourbon
-
 $grey: #F7F7F7
+$dark-grey: #4F4F4F
 $primary: #6A1AC8
 $primary-dark: #3024AE
 $primary-light: #C36CD5
 $secondary-light: #B7CE42
 $secondary-dark: #91B515
 $text-color: #62627A
+
+@import grid
+@import bourbon/app/assets/stylesheets/bourbon
+
+// dimensions
+$timetable-hour-column-width: 96px !default
+$timetable-hour-row-height: 42px
+$timetable-heading-height: 26px
+$timetable-breakpoint: "only screen and (max-width: 960px)" !default
+// colors & decoration
+$timetable-grid-color: #E5E5E5 !default
+$timetable-grid: 1px solid $timetable-grid-color !default
+$timetable-row-header-padding: 15px !default
+$timetable-row-header-color: $dark-grey
+$timetable-row-separator: 1px solid white
+$timetable-row-header-gap: 1px solid transparent
+$timetable-row-uneven-color: $grey
+$timetable-row-even-color: $grey
+$timetable-entry-color: $secondary-light
+$timetable-entry-color-hover: $secondary-dark
+$timetable-entry-border: none
+$timetable-entry-padding: 10px !default
+
+@import timetable/app/styles/plugin
 
 
 /* ==========================================================
@@ -169,6 +191,21 @@ body > header
   left: 16.3%
   bottom: 16.3%
   overflow-y: scroll
+  text-align: left
+
+  color: white
+  text-transform: uppercase
+  font-size: 0.72em
+
+  .row-heading
+    @extend h3
+    font-size: 0.875em
+  .time-label
+    @extend h3
+    color: black !important
+    font-size: 0.6rem
+    letter-spacing: 0.13em
+    line-height: $timetable-hour-row-height
 
 .content-wrap, .hero-wrap
   +clearfix
