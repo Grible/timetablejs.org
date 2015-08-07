@@ -1,0 +1,7 @@
+{
+    "ecmaFeatures": {
+    },
+    "globals": {
+        "Timetable": false
+    }
+}
