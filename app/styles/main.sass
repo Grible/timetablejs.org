@@ -87,6 +87,7 @@ h2
 
 h3
   font-weight: 600
+  letter-spacing: -0.02em
 
 code, pre
   font-size: 0.95em
@@ -133,7 +134,7 @@ hr
   padding: 1.15em 2.7em
   text-transform: uppercase
   font-size: 0.78em
-  letter-spacing: 0.08em
+  letter-spacing: 0.09em
   border-radius: 4px
   transition: background-color 300ms ease
   margin: 0.3em
@@ -188,10 +189,15 @@ body > header
       height: 100vh
   .title-bar
     +gridle(12)
-  .cta-column, .demo-column
+  .cta-column
     +gridle(12)
-    +gridle(6, sm)
-
+    +gridle(7, sm)
+  .demo-column
+    +gridle(12)
+    +gridle(5, sm)
+    +gridle_state(sm)
+      text-align: right
+  .cta-column, .demo-column
     +gridle_state(sm)
       +valign-middle
   .demo-wrapper
