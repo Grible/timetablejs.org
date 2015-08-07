@@ -128,7 +128,7 @@ hr
 
 .btn
   @extend h3
-  background-color: transparentize($primary-light, 0.2)
+  background-color: transparentize($primary-dark, 0.3)
   display: inline-block
   padding: 1.15em 2.7em
   text-transform: uppercase
@@ -136,10 +136,15 @@ hr
   letter-spacing: 0.08em
   border-radius: 4px
   transition: background-color 300ms ease
+  margin: 0.3em
 
-  &:hover
-    background-color: transparentize($primary-dark, 0.5)
+  &:hover, &.secondary:hover
+    background-color: transparentize($primary-light, 0.2)
 
+  &.secondary
+    background-color: transparentize($primary-dark, 0.6)
+    &:hover
+      // background-color: transparentize($primary-dark, 0.5)
 
 .vpad
   padding-top: 4.5em
