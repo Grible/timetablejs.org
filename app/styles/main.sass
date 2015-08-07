@@ -64,6 +64,10 @@ a
   text-decoration: none
   color: $primary
 
+img
+  max-width: 100%
+  height: auto
+
 h1, h2, h3
   font-family: 'Lato', 'Helvetica', sans-serif
   color: $primary-dark
@@ -86,7 +90,6 @@ h3
 
 code, pre
   font-size: 0.95em
-  white-space: nowrap
 
 pre
   color: black
@@ -145,6 +148,12 @@ hr
   padding-top: 2.5em
   padding-bottom: 2.5em
 
+.github-ribbon
+  position: absolute
+  z-index: 10
+  top: 0
+  right: 0
+
 
 /* ==========================================================
  * custom element styles
@@ -183,6 +192,7 @@ body > header
   .demo-wrapper
     position: relative
     display: inline-block
+    max-width: 100%
 
 .timetable
   position: absolute
