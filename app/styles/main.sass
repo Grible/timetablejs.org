@@ -233,6 +233,14 @@ body > header
     letter-spacing: 0.13em
     line-height: $timetable-hour-row-height
 
+  time
+    transition: margin-left 550ms ease-in-out
+
+  &.animate time
+    margin-left: -200px
+    transition: margin-left 400ms ease-in-out
+
+
 .content-wrap, .hero-wrap
   +clearfix
   > section

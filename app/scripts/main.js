@@ -1,5 +1,6 @@
 'use strict';
 
+// Timetable DEMO
 (function(){
 	var timetable = new Timetable();
 	timetable.setScope(18, 3);
@@ -19,4 +20,15 @@
 
 	var renderer = new Timetable.Renderer(timetable);
 	renderer.draw('.timetable');
+})();
+
+// Scroll effect to indicate touch ability
+(function(){
+	window.setTimeout(function() {
+		var el = document.querySelector('.timetable');
+		el.classList.add('animate');
+		window.setTimeout(function() {
+			el.classList.remove('animate');
+		}, 800);
+	}, 1500);
 })();
